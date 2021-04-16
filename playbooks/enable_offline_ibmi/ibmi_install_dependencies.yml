@@ -4,7 +4,7 @@
 - name: Verify {{ dependency }} installed
   raw: /QOpensys/pkgs/bin/rpm -qa {{ python }}-{{ dependency }}
   register: rpm_query_result
-
+  
 - block: 
     - name: find out the name of installation package of {{ dependency }}
       shell: ls {{ package_path }}/{{ python }}-{{ dependency }}*.rpm 
